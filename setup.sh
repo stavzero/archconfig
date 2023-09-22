@@ -10,15 +10,15 @@ pacman -S htop
 pacman -S mediainfo
 pacman -S neofetch
 pacman -S ffmpeg
-pacman -S luaz
+pacman -S lua
 
 # Install Libs
 pacman -S xprop
 pacman -S awk
 
 # Install i3
-pacman -S i3-wm
-pacman -S i3lock
+#pacman -S i3-wm
+#pacman -S i3lock
 
 # Install Window Manager Utils
 pacman -S feh # Backgrounds
@@ -27,10 +27,10 @@ pacman -S picom # Transparency
 pacman -S polybar # Status bar
 
 # Install LightDM for a login screen
-pacman -S lightdm lightdm-gtk-greeter
+#pacman -S lightdm lightdm-gtk-greeter
 
-systemctl enable lightdm 
-systemctl enable NetworkManager
+#systemctl enable lightdm 
+#systemctl enable NetworkManager
 
 # Other i3 status bars instead of polybar
 #pacman -S i3status
@@ -47,4 +47,4 @@ pacman -S godot
 pacman -S obsidian
 
 # Install fish bash replacement
-pacman -S fish
+#pacman -S fish
