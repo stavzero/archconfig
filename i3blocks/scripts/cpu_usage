@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+save_current() {
+    grep 'cpu ' /proc/stat > /tmp/cpustat
+}
+
+[ ! -e /tmp/cpustat ] && save_current
+
+previous=$(cat /tmp/cpustat)
+current=$(grep 'cpu ' /proc/stat)
+
+awkscript='NR == 1 {
+             owork=($2+$4);
+             oidle=$5;
+           }
+           NR > 1 {
+             work=($2+$4)-owork;
+             idle=$5-oidle;
+             printf "%.1f%", 100 * work / (work+idle)
+           }'
+
+usage=$(echo -e "$previous\n$current" | awk "$awkscript")
+
+save_current
+
+echo "$usage"

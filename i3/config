@@ -1,0 +1,252 @@
+# Mod4 = Win key | Mod1 = Alt
+set $mod Mod4
+set $alt Mod1
+
+# Font for window titles. Will also be used by the bar unless a different font is used in the bar {} block below.
+font pango:IosevkaTerm Nerd Font 14
+#font pango:DejaVu Sans Mono 8
+
+	# # # # # # STARTUP EXECUTION # # # # # # #
+
+# Start XDG autostart .desktop files using dex. See also
+# https://wiki.archlinux.org/index.php/XDG_Autostart
+exec --no-startup-id dex --autostart --environment i3
+
+# The combination of xss-lock, nm-applet and pactl is a popular choice, so
+# they are included here as an example. Modify as you see fit.
+# xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
+# screen before suspend. Use loginctl lock-session to lock your screen.
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+# NetworkManager is the most popular way to manage wireless networks on Linux,
+# and nm-applet is a desktop environment-independent system tray GUI for it.
+exec --no-startup-id nm-applet
+
+# Set keyboard language options (get model (pc105) with setxkbmap -query)
+exec_always "setxkbmap -model pc105 -layout us,gr -variant ,, -option grp:alt_shift_toggle"
+
+# Polybar is a replacement for the default i3bar + i3blocks
+exec --no-startup-id polybar
+
+# Feh is used for setting the background
+exec_always --no-startup-id feh --bg-fill ~/Pictures/starfield.png
+
+# picom is used to enable transparency
+exec_always --no-startup-id picom --config ~/.config/picom/picom.conf
+
+	# # # # # # END STARTUP EXECUTION # # # # # # #
+
+	# # # # # # AUDIO KEYBOARD KEYBINDS # # # # # # #
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+	# # # # # # END AUDIO KEYBOARD KEYBINDS # # # # # # #
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Move tiling windows via drag & drop by left-clicking into the title bar,
+# or left-clicking anywhere into the window while holding the floating modifier.
+#tiling_drag modifier titlebar
+
+	# # # # # # KEYBINDS # # # # # # #
+
+# Start a terminal
+bindsym $mod+Return exec alacritty
+
+# Open a browser
+bindsym $mod+b exec qutebrowser
+
+# Kill focused window
+bindsym $mod+q kill
+
+# Start rofi (a program launcher)
+bindsym $mod+space exec --no-startup-id rofi -show drun
+bindsym $mod+Shift+space exec --no-startup-id rofi -show run
+# Use rofi as a Shutdown / Sleep/ Logout etc menu)
+bindsym $mod+x exec --no-startup-id powermenu
+
+# Reload the configuration file
+#bindsym $mod+Shift+c reload
+# Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+
+# Resize window (you can also use the mouse for that)
+mode "resize" {
+	set $resize_amount 10
+        # These bindings trigger as soon as you enter the resize mode
+        bindsym h resize shrink width $resize_amount px or 10 ppt
+        bindsym j resize grow height $resize_amount px or 10 ppt
+        bindsym k resize shrink height $resize_amount px or 10 ppt
+        bindsym l resize grow width $resize_amount px or 10 ppt
+
+        # Same bindings, but for the arrow keys
+        bindsym Left resize shrink width 10 px or 10 ppt
+        bindsym Down resize grow height 10 px or 10 ppt
+        bindsym Up resize shrink height 10 px or 10 ppt
+        bindsym Right resize grow width 10 px or 10 ppt
+
+        # Back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+x mode "resize"
+
+	# # # # # # KEYBINDS # # # # # # #
+
+	# # # # # # # FOCUS # # # # # # #
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+	# # # # # # # END FOCUS # # # # # # #
+
+	# # # # # # # TILING RELATED # # # # # # #
+# Toggle between horizontal and vertical splitting
+bindsym $mod+t split toggle
+
+# Enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# Toggle tiling / floating
+bindsym $mod+Shift+z floating toggle
+
+# Change focus between tiling / floating windows
+bindsym $mod+z focus mode_toggle
+
+	# # # # # # # END TILING RELATED # # # # # # #
+
+	# # # # # # # GAPS # # # # # # #
+
+default_border pixel 0
+gaps inner 7
+#gaps outer 5
+# Only enable gaps if there are more than 1 windows
+#smart_gaps on
+
+	# # # # # # # END GAPS # # # # # # #
+
+	# # # # # # # WORKSPACES # # # # # # #
+
+# Define names for default workspaces.
+set $ws1 "1 "
+set $ws2 "2󰅩 "
+set $ws3 "3󰖟 "
+set $ws4 "4 "
+set $ws5 "5 "
+set $ws6 "6󰓓 "
+set $ws7 "7 "
+set $ws8 "8 "
+set $ws9 "9󰍥 "
+set $ws10 "10"
+
+# Switch to workspace
+bindsym $mod+1 workspace number $ws1
+bindsym $mod+2 workspace number $ws2
+bindsym $mod+3 workspace number $ws3
+bindsym $mod+4 workspace number $ws4
+bindsym $mod+5 workspace number $ws5
+bindsym $mod+6 workspace number $ws6
+bindsym $mod+7 workspace number $ws7
+bindsym $mod+8 workspace number $ws8
+bindsym $mod+9 workspace number $ws9
+bindsym $mod+0 workspace number $ws10
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number $ws1
+bindsym $mod+Shift+2 move container to workspace number $ws2
+bindsym $mod+Shift+3 move container to workspace number $ws3
+bindsym $mod+Shift+4 move container to workspace number $ws4
+bindsym $mod+Shift+5 move container to workspace number $ws5
+bindsym $mod+Shift+6 move container to workspace number $ws6
+bindsym $mod+Shift+7 move container to workspace number $ws7
+bindsym $mod+Shift+8 move container to workspace number $ws8
+bindsym $mod+Shift+9 move container to workspace number $ws9
+bindsym $mod+Shift+0 move container to workspace number $ws10
+
+# Move workspace to another display
+bindsym $mod+Ctrl+Left move workspace to output left
+bindsym $mod+Ctrl+h move workspace to output left
+bindsym $mod+Ctrl+Right move workspace to output right
+bindsym $mod+Ctrl+l move workspace to output right
+
+# Assign default workspaces for programs
+assign [class="firefox"] $ws3
+assign [class="qutebrowser"] $ws3
+assign [class="Thunar"] $ws4
+assign [class="steam"] $ws6
+assign [class="Todoist"] $ws7
+assign [class="vlc"] $ws8
+assign [class="shortwave"] $ws8
+assign [class="obsidian"] $ws9
+#assign [window_role="browser"] $ws3
+
+	# # # # # # # END WORKSPACES # # # # # # #
+
+	# # # # # # STATUS BAR & COLORS  # # # # # # #
+
+#set $text #FBF2C4
+#set $text-alt #B8CDAB
+#set $bg #74A89277
+#set $bg-alt #84B8A2
+#set $bg-alt #74A89277
+#set $bg-u #C7522A
+#set $bg-bm #FF00FF
+
+# Start i3bar to display a workspace bar
+#bar {
+#	# This can allow ussage of alpha colors for the bar
+#	i3bar_command i3bar --transparency
+#	status_command i3blocks
+#	position top
+#	strip_workspace_numbers yes
+#	padding 0 5px
+#
+#	colors {
+#		background $bg
+#		statusline $text
+#		separator  $text-alt
+#		
+#		#                  Border  Bg      Text
+#		focused_workspace  $bg-alt $bg-alt $text
+#		active_workspace   $bg     $bg     $text
+#		inactive_workspace $bg     $bg     $text-alt
+#		urgent_workspace   $bg-u   $bg-u   $text
+#		binding_mode       $bg-bm  $bg-bm  $text
+#	}
+#}
+
+# class                 Border  Bg      Text      Indicator Child_border
+#client.focused          #000000 #000000 $text     #FFFFFF   #000000
+#client.focused_inactive #000000 #000000 $text     #FFFFFF   #000000
+#client.unfocused        #000000 #000000 $text-alt #FFFFFF   #000000
+#client.urgent           $bg-u   $bg-u   $text     #FFFFFF   #000000
+#client.placeholder      #000000 #000000 $text     #FFFFFF   #000000
+#client.background       #FFFFFF
+
+	# # # # # # END STATUS BAR & COLORS # # # # # # #
