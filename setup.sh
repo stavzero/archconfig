@@ -63,6 +63,8 @@ yes | sudo pacman -S gvfs gvfs-mtp gvfs-gphoto2 gvfs-afc
 yes | sudo pacman -S zsh
 #pacman -S fish
 
+chsh -s /bin/zsh
+
 # Set aliases
 echo "alias ll='ls -la'" >> ~/.bashrc
 echo "alias vim='nvim'" >> ~/.bashrc
@@ -76,6 +78,13 @@ echo "alias vim=nvim" >> ~/.zshrc
 # Copy the user icon and background used for lightdm login
 sudo cp Wallpapers/starfield-blue.png /usr/share/pixmaps/starfield-blue.png
 sudo cp usericon.png /usr/share/pixmaps/usericon.png
+
+# Create default home directories
+mkdir Documents
+mkdir Downloads
+mkdir Pictures
+mkdir Projects
+mkdir Music
 
 # Move downloaded configs to their locations
 cp -r i3 ~/.config/
