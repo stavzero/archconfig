@@ -1,0 +1,82 @@
+configuration {
+	display-drun: " Programs:";
+	display-run: "  Run script:";
+	display-window: "Windows:";
+	drun-display-format: "{icon} {name}";
+	modi: "run,drun";
+	font: "IosevkaTerm Nerd Font 16";
+	show-icons: true;
+	icon-theme: "Papirus";
+
+	matching: "fuzzy";
+	terminal: "alacritty";
+}
+
+@theme "/dev/null"
+@import "theme.rasi"
+
+* {
+// Colors are located in theme.rasi	
+
+	background-color: @bg;
+
+	border: 0;
+	margin: 0;
+	padding: 0;
+	spacing: 0;
+}
+
+window {
+	width: 33%;
+}
+
+element {
+	padding: 10;
+	text-color: @fg;
+	background-color: @clear;
+}
+
+element selected {
+	text-color: @fg-sel;
+	background-color: @bg-sel;
+}
+
+element-text {
+	background-color: @clear;
+	text-color: inherit;
+	vertical-align: 0.5;
+}
+
+element-icon {
+	size: 30;
+	background-color: @clear;
+}
+
+entry {
+	text-color: @fg-sel;
+	background-color: @bg-sel;
+	padding: 12;
+}
+
+inputbar {
+	text-color: @fg-sel;
+	children: [prompt, entry];
+}
+
+listview {
+	background-color: @bg;
+	columns: 1;
+	lines: 8;
+}
+
+mainbox {
+	background-color: @bg;
+	children: [inputbar, listview];
+}
+
+prompt {
+	text-color: @fg-sel;
+	background-color: @bg-sel;
+	enabled: true;
+	padding: 12 0 0 12;
+}
