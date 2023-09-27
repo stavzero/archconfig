@@ -1,66 +1,66 @@
 #!/bin/bash
 
 # Update and sync
-sudo pacman -Syu
+yes | sudo pacman -Syu
 
 # Ensure the following are installed
-sudo pacman -S git
-sudo pacman -S curl
-sudo pacman -S htop
-sudo pacman -S lua
-sudo pacman -S networkmanager
+yes | sudo pacman -S git
+yes | sudo pacman -S curl
+yes | sudo pacman -S htop
+yes | sudo pacman -S lua
+yes | sudo pacman -S networkmanager
 
 # Enable and start networkmanager
 sudo systemctl start NetworkManager.service
 sudo systemctl enable NetworkManager.service
 
-sudo pacman -S xprop
-sudo pacman -S awk
+yes | sudo pacman -S xprop
+yes | sudo pacman -S awk
 
 # Install the lts version of arch aswell
-sudo pacman -S linux-lts
+yes | sudo pacman -S linux-lts
 
 # Install basic Utils
-sudo pacman -S mediainfo
-sudo pacman -S ffmpeg
-sudo pacman -S neofetch
-sudo pacman -S bluez bluez-utils
-sudo pacman -S file-roller
+yes | sudo pacman -S mediainfo
+yes | sudo pacman -S ffmpeg
+yes | sudo pacman -S neofetch
+yes | sudo pacman -S bluez bluez-utils
+yes | sudo pacman -S file-roller
 
 sudo systemctl start bluetooth.service
 sudo systemctl enable bluetooth.service
 
 # Install i3 if not installed via archinstall
-#sudo pacman -S i3-wm
-#sudo pacman -S i3lock
+#yes | sudo pacman -S i3-wm
+#yes | sudo pacman -S i3lock
 
 # Other i3 status bars instead of polybar
-#sudo pacman -S i3status
-#sudo pacman -S i3blocks
+#yes | sudo pacman -S i3status
+#yes | sudo pacman -S i3blocks
 
 # Install LightDM for a login screen if not installed via archinstall
-#sudo pacman -S lightdm lightdm-gtk-greeter
+#yes | sudo pacman -S lightdm lightdm-gtk-greeter
 
 # Install Window Manager Utils
-sudo pacman -S feh # Backgrounds
-sudo pacman -S rofi # Dmenu replacement
-sudo pacman -S picom # Transparency
-sudo pacman -S polybar # Status bar
+yes | sudo pacman -S feh # Backgrounds
+yes | sudo pacman -S rofi # Dmenu replacement
+yes | sudo pacman -S picom # Transparency
+yes | sudo pacman -S polybar # Status bar
 
 # Install Programs
-sudo pacman -S neovim
-sudo pacman -S alacritty
-sudo pacman -S thunar thunar-volman
-sudo pacman -S firefox
-sudo pacman -S qutebrowser
-sudo pacman -S vlc
-sudo pacman -S godot
+yes | sudo pacman -S neovim
+yes | sudo pacman -S alacritty
+yes | sudo pacman -S thunar thunar-volman
+yes | sudo pacman -S firefox
+yes | sudo pacman -S qutebrowser
+yes | sudo pacman -S vlc
+yes | sudo pacman -S godot
 
 # Install libs for drives, trash, archive management
-sudo pacman -S gvfs gvfs-mtp gvfs-gphoto2 gvfs-afc
+yes | sudo pacman -S gvfs gvfs-mtp gvfs-gphoto2 gvfs-afc
 
 # Install a bash replacement
-sudo pacman -S zsh
+yes | sudo pacman -S zsh
 #pacman -S fish
 
 # Set aliases
