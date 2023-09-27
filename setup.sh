@@ -96,7 +96,7 @@ sudo cp lightdm-gtk-greeter.conf /etc/lightdm/
 #copy lightdm config
 
 # Install papirus theme
-sudo pacman -S papirus-icon-theme
+yes | sudo pacman -S papirus-icon-theme
 
 # Disable beep sounds in laptops
 echo "blacklist pcspkr" >> nobeep.conf
@@ -115,3 +115,5 @@ sudo cp 31_hold_shift /etc/grub.d/
 sudo chmod 755 /etc/grub.d/31_hold_shift
 
 sudo grub-mkconfig -o /boot/grub/grub.cfg
+yes | sudo pacman -Syu
+echo "SETUP DONE. REBOOT."
