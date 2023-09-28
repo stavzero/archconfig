@@ -28,6 +28,7 @@ yes | sudo pacman -S ffmpeg
 yes | sudo pacman -S neofetch
 yes | sudo pacman -S bluez bluez-utils
 yes | sudo pacman -S file-roller
+yes | sudo pacman -S gnome-disk-utility
 
 sudo systemctl start bluetooth.service
 sudo systemctl enable bluetooth.service
@@ -54,9 +55,15 @@ yes | sudo pacman -S neovim
 yes | sudo pacman -S alacritty
 yes | sudo pacman -S thunar thunar-volman
 yes | sudo pacman -S firefox
-yes | sudo pacman -S qutebrowser
 yes | sudo pacman -S vlc
-yes | sudo pacman -S godot
+
+# Optional programs
+#yes | sudo pacman -S godot
+#yes | sudo pacman -S blender
+#yes | sudo pacman -S gimp
+yes | sudo pacman -S qutebrowser
+#yes | sudo pacman -S helix
+#yes | sudo pacman -S gparted
 
 # Install libs for drives, trash, archive management
 yes | sudo pacman -S gvfs gvfs-mtp gvfs-gphoto2 gvfs-afc
