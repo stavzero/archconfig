@@ -9,8 +9,8 @@ yes | sudo pacman -S curl
 yes | sudo pacman -S htop
 yes | sudo pacman -S lua
 yes | sudo pacman -S networkmanager
-yes | sudo pacman -S libnotify
-yes | sudo pacman -S dunst
+yes | sudo pacman -S libnotify # Notifications
+yes | sudo pacman -S dunst # Notifications
 
 # Enable and start networkmanager
 sudo systemctl start NetworkManager.service
@@ -19,16 +19,15 @@ sudo systemctl enable NetworkManager.service
 yes | sudo pacman -S xprop
 yes | sudo pacman -S awk
 
-# Install the lts version of arch aswell
+# Install the lts version of arch as well
 yes | sudo pacman -S linux-lts
 
 # Install basic Utils
 yes | sudo pacman -S mediainfo
 yes | sudo pacman -S ffmpeg
 yes | sudo pacman -S neofetch
-yes | sudo pacman -S bluez bluez-utils
-yes | sudo pacman -S file-roller
-yes | sudo pacman -S gnome-disk-utility
+yes | sudo pacman -S bluez bluez-utils # Bluetooth
+yes | sudo pacman -S file-roller # Archive manager
 
 sudo systemctl start bluetooth.service
 sudo systemctl enable bluetooth.service
@@ -69,18 +68,21 @@ yes | sudo pacman -S qutebrowser
 yes | sudo pacman -S gvfs gvfs-mtp gvfs-gphoto2 gvfs-afc
 
 # Install a bash replacement
-yes | sudo pacman -S zsh
-#pacman -S fish
+#yes | sudo pacman -S zsh
+#yes | sudo pacman -S fish
 
 # Set zsh as default shell
 #chsh -s /bin/zsh
+# -- OR --
+# Set fish as default shell
+#chsh -s /bin/fish
 
 # Set aliases
 echo "alias ll='ls -la'" >> ~/.bashrc
 echo "alias vim='nvim'" >> ~/.bashrc
 
-echo "alias ll='ls -la'" >> ~/.zshrc
-echo "alias vim=nvim" >> ~/.zshrc
+#echo "alias ll='ls -la'" >> ~/.zshrc
+#echo "alias vim=nvim" >> ~/.zshrc
 
 #systemctl enable lightdm 
 #systemctl enable NetworkManager
