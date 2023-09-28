@@ -69,6 +69,18 @@ yes | sudo pacman -S qutebrowser
 # Install libs for drives, trash, archive management
 yes | sudo pacman -S gvfs gvfs-mtp gvfs-gphoto2 gvfs-afc
 
+# Install papirus theme
+yes | sudo pacman -S papirus-icon-theme
+
+# Install fonts
+yes | sudo pacman -S ttf-iosevkaterm-nerd
+yes | sudo pacman -S ttf-jetbrains-mono-nerd
+
+# Enable pacman multilib package database to install steam
+#echo "[multilib]" | sudo tee -a /etc/pacman.conf
+#echo "Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
+#sudo pacman -S steam
+
 # Install a bash replacement
 #yes | sudo pacman -S zsh
 #yes | sudo pacman -S fish
@@ -114,11 +126,7 @@ sudo cp powermenu /usr/local/bin/
 sudo cp wifimenu /usr/local/bin/
 sudo chmod 755 /usr/local/bin/powermenu
 sudo chmod 755 /usr/local/bin/wifimenu
-sudo cp -r IosevkaTerm /usr/share/fonts/
 sudo cp lightdm-gtk-greeter.conf /etc/lightdm/
-
-# Install papirus theme
-yes | sudo pacman -S papirus-icon-theme
 
 # Disable beep sounds in laptops
 echo "blacklist pcspkr" >> nobeep.conf
@@ -137,11 +145,6 @@ sudo cp 31_hold_shift /etc/grub.d/
 sudo chmod 755 /etc/grub.d/31_hold_shift
 
 sudo grub-mkconfig -o /boot/grub/grub.cfg
-
-# Enable pacman multilib package database to install steam
-#echo "[multilib]" | sudo tee -a /etc/pacman.conf
-#echo "Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
-#sudo pacman -S steam
 
 # Finish setup
 yes | sudo pacman -Syu
