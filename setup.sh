@@ -133,5 +133,13 @@ sudo cp 31_hold_shift /etc/grub.d/
 sudo chmod 755 /etc/grub.d/31_hold_shift
 
 sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+# Enable pacman multilib package database to install steam
+echo "[multilib]" | sudo tee -a /etc/pacman.conf
+echo "Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
+
+sudo pacman -S steam
+
+# Finish setup
 yes | sudo pacman -Syu
 echo "SETUP DONE. REBOOT."
