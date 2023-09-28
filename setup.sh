@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Starting Arch Setup this will take some time."
+
 # Update and sync
 yes | sudo pacman -Syu
 
