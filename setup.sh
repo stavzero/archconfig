@@ -9,6 +9,8 @@ yes | sudo pacman -S curl
 yes | sudo pacman -S htop
 yes | sudo pacman -S lua
 yes | sudo pacman -S networkmanager
+yes | sudo pacman -S libnotify
+yes | sudo pacman -S dunst
 
 # Enable and start networkmanager
 sudo systemctl start NetworkManager.service
@@ -101,8 +103,6 @@ sudo chmod 755 /usr/local/bin/powermenu
 sudo chmod 755 /usr/local/bin/wifimenu
 sudo cp -r IosevkaTerm /usr/share/fonts/
 sudo cp lightdm-gtk-greeter.conf /etc/lightdm/
-
-#copy lightdm config
 
 # Install papirus theme
 yes | sudo pacman -S papirus-icon-theme
