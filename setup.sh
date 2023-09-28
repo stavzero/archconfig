@@ -72,7 +72,8 @@ yes | sudo pacman -S gvfs gvfs-mtp gvfs-gphoto2 gvfs-afc
 yes | sudo pacman -S zsh
 #pacman -S fish
 
-chsh -s /bin/zsh
+# Set zsh as default shell
+#chsh -s /bin/zsh
 
 # Set aliases
 echo "alias ll='ls -la'" >> ~/.bashrc
