@@ -57,6 +57,7 @@ yes | sudo pacman -S alacritty
 yes | sudo pacman -S thunar thunar-volman
 yes | sudo pacman -S firefox
 yes | sudo pacman -S vlc
+yes | sudo pacman -S gnome-disk-utility
 
 # Optional programs
 #yes | sudo pacman -S godot
