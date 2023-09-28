@@ -79,6 +79,7 @@ yes | sudo pacman -S ttf-jetbrains-mono-nerd
 # Enable pacman multilib package database to install steam
 #echo "[multilib]" | sudo tee -a /etc/pacman.conf
 #echo "Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
+#sudo pacman -Sy
 #sudo pacman -S steam
 
 # Install a bash replacement
