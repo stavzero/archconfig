@@ -108,11 +108,11 @@ sudo cp Wallpapers/starfield-blue.png /usr/share/pixmaps/starfield-blue.png
 sudo cp usericon.png /usr/share/pixmaps/usericon.png
 
 # Create default home directories
-mkdir Documents
-mkdir Downloads
-mkdir Pictures
-mkdir Projects
-mkdir Music
+mkdir ~/Documents
+mkdir ~/Downloads
+mkdir ~/Pictures
+mkdir ~/Projects
+mkdir ~/Music
 
 # Move downloaded configs to their locations
 cp -r i3 ~/.config/
