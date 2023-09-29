@@ -125,6 +125,7 @@ cp -r picom ~/.config/
 cp -r polybar ~/.config/
 cp -r rofi ~/.config/
 cp -r dunst ~/.config
+cp -r helix ~/.config
 mv Wallpapers ~/Wallpapers
 
 sudo cp powermenu /usr/local/bin/
