@@ -8,8 +8,8 @@ yes | sudo pacman -Syu
 # Ensure the following are installed
 yes | sudo pacman -S git
 yes | sudo pacman -S curl
-yes | sudo pacman -S htop
-yes | sudo pacman -S lua
+yes | sudo pacman -S htop # Resource monitor
+yes | sudo pacman -S lua # Programming language
 yes | sudo pacman -S networkmanager
 yes | sudo pacman -S libnotify # Notifications
 yes | sudo pacman -S dunst # Notifications
@@ -26,8 +26,8 @@ yes | sudo pacman -S linux-lts
 
 # Install basic Utils
 yes | sudo pacman -S mediainfo
-yes | sudo pacman -S ffmpeg
-yes | sudo pacman -S neofetch
+yes | sudo pacman -S ffmpeg # Media codec
+yes | sudo pacman -S neofetch # System info
 yes | sudo pacman -S bluez bluez-utils # Bluetooth
 yes | sudo pacman -S file-roller # Archive manager
 
@@ -45,6 +45,9 @@ sudo systemctl enable bluetooth.service
 # Install LightDM for a login screen if not installed via archinstall
 #yes | sudo pacman -S lightdm lightdm-gtk-greeter
 
+#systemctl enable lightdm 
+#systemctl enable NetworkManager
+
 # Install Window Manager Utils
 yes | sudo pacman -S feh # Backgrounds
 yes | sudo pacman -S rofi # Dmenu replacement
@@ -52,20 +55,21 @@ yes | sudo pacman -S picom # Transparency
 yes | sudo pacman -S polybar # Status bar
 
 # Install Programs
-yes | sudo pacman -S neovim
-yes | sudo pacman -S alacritty
-yes | sudo pacman -S thunar thunar-volman
-yes | sudo pacman -S firefox
-yes | sudo pacman -S vlc
-yes | sudo pacman -S gnome-disk-utility
+yes | sudo pacman -S neovim # Editor
+yes | sudo pacman -S alacritty # Terminal emulator
+yes | sudo pacman -S thunar thunar-volman # File browser
+yes | sudo pacman -S tumbler # Image thumbnails for file browser
+yes | sudo pacman -S firefox # Web browser
+yes | sudo pacman -S vlc # Media player
+yes | sudo pacman -S gnome-disk-utility # Disc utility
 
 # Optional programs
-#yes | sudo pacman -S godot
-#yes | sudo pacman -S blender
-#yes | sudo pacman -S gimp
-yes | sudo pacman -S qutebrowser
-#yes | sudo pacman -S helix
-#yes | sudo pacman -S gparted
+#yes | sudo pacman -S godot # Game engine
+#yes | sudo pacman -S blender # 3D modeling software
+#yes | sudo pacman -S gimp # Drawing program
+yes | sudo pacman -S qutebrowser # Web browser
+#yes | sudo pacman -S helix # Editor
+#yes | sudo pacman -S gparted # Disc utility
 
 # Install libs for drives, trash, archive management
 yes | sudo pacman -S gvfs gvfs-mtp gvfs-gphoto2 gvfs-afc
@@ -96,12 +100,11 @@ yes | sudo pacman -S ttf-jetbrains-mono-nerd
 # Set aliases
 echo "alias ll='ls -la'" >> ~/.bashrc
 echo "alias vim='nvim'" >> ~/.bashrc
+echo "alias hx='helix'" >> ~/.bashrc
 
 #echo "alias ll='ls -la'" >> ~/.zshrc
 #echo "alias vim=nvim" >> ~/.zshrc
-
-#systemctl enable lightdm 
-#systemctl enable NetworkManager
+#echo "alias hx='helix'" >> ~/.zshrc
 
 # Copy the user icon and background used for lightdm login
 sudo cp Wallpapers/starfield-blue.png /usr/share/pixmaps/starfield-blue.png
