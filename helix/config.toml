@@ -1,0 +1,30 @@
+theme = "rose_pine"
+
+[editor]
+mouse = true
+middle-click-paste = true
+line-number = "absolute"
+auto-format = false
+color-modes = true
+scrolloff = 5
+
+[editor.statusline]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
+
+[editor.cursor-shape]
+normal = "block"
+insert = "bar"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.search]
+smart-case = true
+wrap-around = true
+
+[editor.indent-guides]
+render = true
+character = "|"
