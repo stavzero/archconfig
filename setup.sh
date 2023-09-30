@@ -101,10 +101,12 @@ yes | sudo pacman -S ttf-jetbrains-mono-nerd
 echo "alias ll='ls -la'" >> ~/.bashrc
 echo "alias vim='nvim'" >> ~/.bashrc
 echo "alias hx='helix'" >> ~/.bashrc
+echo "PS1='$PWD > '" >> ~/.bashrc
 
 #echo "alias ll='ls -la'" >> ~/.zshrc
 #echo "alias vim=nvim" >> ~/.zshrc
 #echo "alias hx='helix'" >> ~/.zshrc
+#echo "PS1='$PWD > '" >> ~/.bashrc
 
 # Copy the user icon and background used for lightdm login
 sudo cp Wallpapers/starfield-blue.png /usr/share/pixmaps/starfield-blue.png
@@ -125,6 +127,7 @@ cp -r picom ~/.config/
 cp -r polybar ~/.config/
 cp -r rofi ~/.config/
 cp -r dunst ~/.config
+cp -r alacritty ~/.config
 cp -r helix ~/.config
 mv Wallpapers ~/Wallpapers
 
