@@ -23,7 +23,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Set keyboard language options (get model (pc105) with setxkbmap -query)
-exec_always "setxkbmap -model pc105 -layout us,gr -variant ,, -option grp:alt_shift_toggle"
+exec_always --no-startup-id "setxkbmap -model pc105 -layout us,gr -variant ,, -option grp:alt_shift_toggle"
 
 # Polybar is a replacement for the default i3bar + i3blocks
 exec --no-startup-id polybar
@@ -57,10 +57,10 @@ floating_modifier $mod
 	# # # # # # KEYBINDS # # # # # # #
 
 # Start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec --no-startup-id alacritty
 
 # Open a browser
-bindsym $mod+b exec qutebrowser
+bindsym $mod+b exec --no-startup-id qutebrowser
 
 # Kill focused window
 bindsym $mod+q kill
