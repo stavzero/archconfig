@@ -80,6 +80,7 @@ yes | sudo pacman -S papirus-icon-theme
 # Install fonts
 yes | sudo pacman -S ttf-iosevkaterm-nerd
 yes | sudo pacman -S ttf-jetbrains-mono-nerd
+yes | sudo pacman -S ttf-space-mono-nerd
 
 # Enable pacman multilib package database to install steam
 #echo "[multilib]" | sudo tee -a /etc/pacman.conf
