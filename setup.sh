@@ -29,10 +29,15 @@ yes | sudo pacman -S mediainfo
 yes | sudo pacman -S ffmpeg # Media codec
 yes | sudo pacman -S neofetch # System info
 yes | sudo pacman -S bluez bluez-utils # Bluetooth
+yes | sudo pacman -S blueman # Bluetooth manager
 yes | sudo pacman -S file-roller # Archive manager
 
 sudo systemctl start bluetooth.service
 sudo systemctl enable bluetooth.service
+
+bluetoothctl power on
+bluetoothctl agent on
+bluetoothctl default-agent
 
 # Install i3 if not installed via archinstall
 #yes | sudo pacman -S i3-wm
