@@ -20,6 +20,7 @@ select = "underline"
 
 [editor.file-picker]
 hidden = false
+max-depth = 1
 
 [editor.search]
 smart-case = true
@@ -27,4 +28,5 @@ wrap-around = true
 
 [editor.indent-guides]
 render = true
-character = "|"
+character = "╎"
+skip-levels = 1
