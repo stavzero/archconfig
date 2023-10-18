@@ -75,6 +75,8 @@ yes | sudo pacman -S gnome-disk-utility # Disc utility
 yes | sudo pacman -S qutebrowser # Web browser
 #yes | sudo pacman -S helix # Editor
 #yes | sudo pacman -S gparted # Disc utility
+yes | sudo pacman -S openvpn # VPN
+#yes | sudo pacman -S networkmanager-openvpn # Manage OpenVPN from Network Manager
 
 # Install libs for drives, trash, archive management
 yes | sudo pacman -S gvfs gvfs-mtp gvfs-gphoto2 gvfs-afc
