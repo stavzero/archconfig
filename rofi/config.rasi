@@ -1,10 +1,10 @@
 configuration {
-	display-drun: " Programs:";
-	display-run: "  Run script:";
+	display-drun: " ";
+	display-run: " Scripts:";
 	display-window: "Windows:";
 	drun-display-format: "{icon} {name}";
-	modi: "run,drun";
-	font: "IosevkaTerm Nerd Font 16";
+	modi: "drun,run";
+	font: "SpaceMono Nerd Font 16";
 	show-icons: true;
 	icon-theme: "Papirus";
 
@@ -18,8 +18,7 @@ configuration {
 * {
 // Colors are located in theme.rasi	
 
-	background-color: @bg;
-
+	background-color: @clear;
 	border: 0;
 	margin: 0;
 	padding: 0;
@@ -33,29 +32,21 @@ window {
 element {
 	padding: 10;
 	text-color: @fg;
-	background-color: @clear;
 }
 
 element selected {
 	text-color: @fg-sel;
 	background-color: @bg-sel;
+	border-radius: 30;
 }
 
 element-text {
-	background-color: @clear;
 	text-color: inherit;
 	vertical-align: 0.5;
 }
 
 element-icon {
 	size: 30;
-	background-color: @clear;
-}
-
-entry {
-	text-color: @fg-sel;
-	background-color: @bg-sel;
-	padding: 12;
 }
 
 inputbar {
@@ -63,20 +54,28 @@ inputbar {
 	children: [prompt, entry];
 }
 
+prompt {
+	text-color: @fg-sel;
+	enabled: true;
+	padding: 12 0 0 12;
+}
+
+entry {
+	placeholder: "Search Apps";
+	placeholder-color: @fg;
+	text-color: @fg-sel;
+	padding: 12;
+}
+
 listview {
-	background-color: @bg;
 	columns: 1;
 	lines: 8;
 }
 
 mainbox {
+	border: 3;
+	border-color: @fg-sel;
 	background-color: @bg;
+	padding: 10;
 	children: [inputbar, listview];
-}
-
-prompt {
-	text-color: @fg-sel;
-	background-color: @bg-sel;
-	enabled: true;
-	padding: 12 0 0 12;
 }
