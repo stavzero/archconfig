@@ -1,6 +1,6 @@
 * {
 	clear: #00000000;
-	bg: #21315044;
+	bg: #213150AA;
 	bg-sel: #E16136FF;
 	fg: #AAAAAA;
 	fg-sel: #FFFFFF;
