@@ -18,11 +18,32 @@ yes | sudo pacman -S dunst # Notifications
 sudo systemctl start NetworkManager.service
 sudo systemctl enable NetworkManager.service
 
+# Install i3 if not installed via archinstall
+#yes | sudo pacman -S i3-wm
+#yes | sudo pacman -S i3lock
+
+# Other i3 status bars instead of polybar
+#yes | sudo pacman -S i3status
+#yes | sudo pacman -S i3blocks
+
+# Install LightDM for a login screen if not installed via archinstall
+#yes | sudo pacman -S lightdm lightdm-gtk-greeter
+
+#systemctl enable lightdm 
+#systemctl enable NetworkManager
+
 yes | sudo pacman -S xprop
 yes | sudo pacman -S awk
 
 # Install the lts version of arch as well
 yes | sudo pacman -S linux-lts
+
+# Install linux headers to be able to use the AUR
+#yes | sudo pacman -S linux-headers
+#yes | sudo pacman -S linux-lts-headers
+
+# Install dynamic kernel module system
+#yes | sudo pacman -S dkms
 
 # Install basic Utils
 yes | sudo pacman -S mediainfo
@@ -38,20 +59,6 @@ sudo systemctl enable bluetooth.service
 bluetoothctl power on
 bluetoothctl agent on
 bluetoothctl default-agent
-
-# Install i3 if not installed via archinstall
-#yes | sudo pacman -S i3-wm
-#yes | sudo pacman -S i3lock
-
-# Other i3 status bars instead of polybar
-#yes | sudo pacman -S i3status
-#yes | sudo pacman -S i3blocks
-
-# Install LightDM for a login screen if not installed via archinstall
-#yes | sudo pacman -S lightdm lightdm-gtk-greeter
-
-#systemctl enable lightdm 
-#systemctl enable NetworkManager
 
 # Install Window Manager Utils
 yes | sudo pacman -S feh # Backgrounds
@@ -75,7 +82,7 @@ yes | sudo pacman -S gnome-disk-utility # Disc utility
 yes | sudo pacman -S qutebrowser # Web browser
 #yes | sudo pacman -S helix # Editor
 #yes | sudo pacman -S gparted # Disc utility
-yes | sudo pacman -S openvpn # VPN
+#yes | sudo pacman -S openvpn # VPN
 #yes | sudo pacman -S networkmanager-openvpn # Manage OpenVPN from Network Manager
 
 # Install libs for drives, trash, archive management
@@ -114,7 +121,7 @@ echo "PS1='$PWD > '" >> ~/.bashrc
 #echo "alias ll='ls -la'" >> ~/.zshrc
 #echo "alias vim=nvim" >> ~/.zshrc
 #echo "alias hx='helix'" >> ~/.zshrc
-#echo "PS1='$PWD > '" >> ~/.bashrc
+#echo "PS1='$PWD > '" >> ~/.zshrc
 
 # Copy the user icon and background used for lightdm login
 sudo cp Wallpapers/starfield-blue.png /usr/share/pixmaps/starfield-blue.png
@@ -139,6 +146,7 @@ cp -r alacritty ~/.config
 cp -r helix ~/.config
 mv Wallpapers ~/Wallpapers
 
+sudo chmod 755 ~/.config/polybar/open-vpn.sh
 sudo cp powermenu /usr/local/bin/
 sudo cp wifimenu /usr/local/bin/
 sudo chmod 755 /usr/local/bin/powermenu
