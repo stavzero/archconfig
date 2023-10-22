@@ -116,7 +116,8 @@ yes | sudo pacman -S ttf-space-mono-nerd
 echo "alias ll='ls -la'" >> ~/.bashrc
 echo "alias vim='nvim'" >> ~/.bashrc
 echo "alias hx='helix'" >> ~/.bashrc
-echo "PS1='$PWD > '" >> ~/.bashrc
+#echo "PS1='$PWD > '" >> ~/.bashrc
+echo "PS1='\[\033[1;44m\]\[\033[1;31m\] $PWD \[\033[00m\] > '" >> ~/.bashrc
 
 #echo "alias ll='ls -la'" >> ~/.zshrc
 #echo "alias vim=nvim" >> ~/.zshrc
