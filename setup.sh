@@ -7,6 +7,7 @@ yes | sudo pacman -Syu
 
 # Ensure the following are installed
 yes | sudo pacman -S git
+yes | sudo pacman -S base-devel
 yes | sudo pacman -S curl
 yes | sudo pacman -S htop # Resource monitor
 yes | sudo pacman -S lua # Programming language
@@ -32,20 +33,12 @@ sudo systemctl enable NetworkManager.service
 #systemctl enable lightdm 
 #systemctl enable NetworkManager
 
-yes | sudo pacman -S xprop
-yes | sudo pacman -S awk
-
 # Install the lts version of arch as well
 yes | sudo pacman -S linux-lts
 
-# Install linux headers to be able to use the AUR
-#yes | sudo pacman -S linux-headers
-#yes | sudo pacman -S linux-lts-headers
-
-# Install dynamic kernel module system
-#yes | sudo pacman -S dkms
-
 # Install basic Utils
+yes | sudo pacman -S awk
+yes | sudo pacman -S xprop
 yes | sudo pacman -S mediainfo
 yes | sudo pacman -S ffmpeg # Media codec
 yes | sudo pacman -S neofetch # System info
@@ -76,10 +69,10 @@ yes | sudo pacman -S vlc # Media player
 yes | sudo pacman -S gnome-disk-utility # Disc utility
 
 # Optional programs
+yes | sudo pacman -S qutebrowser # Web browser with vim keybindings
 #yes | sudo pacman -S godot # Game engine
 #yes | sudo pacman -S blender # 3D modeling software
 #yes | sudo pacman -S gimp # Drawing program
-yes | sudo pacman -S qutebrowser # Web browser
 #yes | sudo pacman -S helix # Editor
 #yes | sudo pacman -S gparted # Disc utility
 #yes | sudo pacman -S openvpn # VPN
@@ -95,12 +88,6 @@ yes | sudo pacman -S papirus-icon-theme
 yes | sudo pacman -S ttf-iosevkaterm-nerd
 yes | sudo pacman -S ttf-jetbrains-mono-nerd
 yes | sudo pacman -S ttf-space-mono-nerd
-
-# Enable pacman multilib package database to install steam
-#echo "[multilib]" | sudo tee -a /etc/pacman.conf
-#echo "Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
-#sudo pacman -Sy
-#sudo pacman -S steam
 
 # Install a bash replacement
 #yes | sudo pacman -S zsh
@@ -171,6 +158,29 @@ sudo cp 31_hold_shift /etc/grub.d/
 sudo chmod 755 /etc/grub.d/31_hold_shift
 
 sudo grub-mkconfig -o /boot/grub/grub.cfg
+
+# Enable pacman multilib package database to install steam
+#echo "[multilib]" | sudo tee -a /etc/pacman.conf
+#echo "Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
+#sudo pacman -Syu
+
+# Install linux headers to be able to use the AUR
+#yes | sudo pacman -S linux-headers
+#yes | sudo pacman -S linux-lts-headers
+
+# Install dynamic kernel module system (needed for some aur packages)
+#yes | sudo pacman -S dkms
+
+# Install yay AUR helper
+#git clone https://aur.archlinux.org/yay.git
+#cd yay-git
+#makepkg -si
+#yay -Syu
+
+# Install GPU drivers (pick the correct one) and Steam
+#sudo pacman -S nvidia
+#sudo pacman -S nvidia-lts
+#sudo pacman -S steam
 
 # Finish setup
 yes | sudo pacman -Syu
