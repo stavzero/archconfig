@@ -64,12 +64,16 @@ yes | sudo pacman -S neovim # Editor
 yes | sudo pacman -S alacritty # Terminal emulator
 yes | sudo pacman -S thunar thunar-volman # File browser
 yes | sudo pacman -S tumbler # Image thumbnails for file browser
-yes | sudo pacman -S firefox # Web browser
 yes | sudo pacman -S vlc # Media player
 yes | sudo pacman -S gnome-disk-utility # Disc utility
 
-# Optional programs
+# Install a Web Browser
+#yes | sudo pacman -S firefox
+yes | sudo pacman -S vivaldi
 yes | sudo pacman -S qutebrowser # Web browser with vim keybindings
+# Brave is available from AUR after setup with yay -S brave-bin
+
+# Optional programs
 #yes | sudo pacman -S godot # Game engine
 #yes | sudo pacman -S blender # 3D modeling software
 #yes | sudo pacman -S gimp # Drawing program
