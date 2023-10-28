@@ -197,6 +197,7 @@ bindsym $mod+Ctrl+l move workspace to output right
 
 # Assign default workspaces for programs
 assign [class="firefox"] $ws3
+assign [class="Brave-browser"] $ws3
 assign [class="qutebrowser"] $ws3
 assign [class="Thunar"] $ws4
 assign [class="Godot"] $ws5
