@@ -168,6 +168,15 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 #echo "Include = /etc/pacman.d/mirrorlist" | sudo tee -a /etc/pacman.conf
 #sudo pacman -Syu
 
+# Install GPU drivers (pick the correct one) and Steam
+# Legacy proprietary drivers are located in AUR. Install with yay
+#yes | sudo pacman -S nvidia
+#yes | sudo pacman -S nvidia-lts
+
+#yes | sudo pacman -S nvidia-utils nvidia-settings
+
+#sudo pacman -S steam
+
 # Install linux headers to be able to use the AUR
 #yes | sudo pacman -S linux-headers
 #yes | sudo pacman -S linux-lts-headers
@@ -177,14 +186,9 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 
 # Install yay AUR helper
 #git clone https://aur.archlinux.org/yay.git
-#cd yay-git
+#cd yay
 #makepkg -si
 #yay -Syu
-
-# Install GPU drivers (pick the correct one) and Steam
-#sudo pacman -S nvidia
-#sudo pacman -S nvidia-lts
-#sudo pacman -S steam
 
 # Finish setup
 yes | sudo pacman -Syu
