@@ -62,9 +62,6 @@ bindsym $mod+Return exec --no-startup-id alacritty
 # Open a browser
 bindsym $mod+b exec --no-startup-id qutebrowser
 
-# Open a file manager
-bindsym $mod+b exec --no-startup-id thunar
-
 # Kill focused window
 bindsym $mod+q kill
 
