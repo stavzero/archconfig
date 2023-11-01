@@ -114,6 +114,7 @@ echo "PS1='\[\033[1;44m\]\[\033[1;31m\] $PWD \[\033[00m\] > '" >> ~/.bashrc
 #echo "alias vim=nvim" >> ~/.zshrc
 #echo "alias hx='helix'" >> ~/.zshrc
 #echo "PS1='$PWD > '" >> ~/.zshrc
+#echo "PS1='\[\033[1;44m\]\[\033[1;31m\] $PWD \[\033[00m\] > '" >> ~/.zshrc
 
 # Copy the user icon and background used for lightdm login
 sudo cp Wallpapers/starfield-blue.png /usr/share/pixmaps/starfield-blue.png
@@ -189,9 +190,13 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 #cd yay
 #makepkg -si
 #yay -Syu
+#cd ..
 
-# Download FBX2glTF Used by godot engine
-#curl -O https://github.com/godotengine/FBX2glTF/releases/latest/download/FBX2glTF-linux-x86_64.zip
+# Download FBX2glTF Used by Godot Engine
+#curl -OL https://github.com/godotengine/FBX2glTF/releases/latest/download/FBX2glTF-linux-x86_64.zip
+#unzip FBX2glTF-linux-x86_64.zip
+#rm FBX2glTF-linux-x86_64.zip
+#cp -r FBX2glTF-linux-x86_64 ~/Documents
 
 # Finish setup
 yes | sudo pacman -Syu
