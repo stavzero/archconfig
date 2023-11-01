@@ -190,6 +190,9 @@ sudo grub-mkconfig -o /boot/grub/grub.cfg
 #makepkg -si
 #yay -Syu
 
+# Download FBX2glTF Used by godot engine
+#curl -O https://github.com/godotengine/FBX2glTF/releases/latest/download/FBX2glTF-linux-x86_64.zip
+
 # Finish setup
 yes | sudo pacman -Syu
 echo "SETUP DONE. REBOOT."
