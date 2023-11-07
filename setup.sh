@@ -81,9 +81,10 @@ yes | sudo pacman -S qutebrowser # Web browser with vim keybindings
 #yes | sudo pacman -S gparted # Disc utility
 #yes | sudo pacman -S openvpn # VPN
 #yes | sudo pacman -S networkmanager-openvpn # Manage OpenVPN from Network Manager
+yes | sudo pacman -S smbclient
 
 # Install libs for drives, trash, archive management
-yes | sudo pacman -S gvfs gvfs-mtp gvfs-gphoto2 gvfs-afc
+yes | sudo pacman -S gvfs gvfs-smb gvfs-mtp gvfs-gphoto2 gvfs-afc
 
 # Install papirus theme
 yes | sudo pacman -S papirus-icon-theme
