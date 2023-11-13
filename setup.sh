@@ -77,6 +77,7 @@ yes | sudo pacman -S qutebrowser # Web browser with vim keybindings
 #yes | sudo pacman -S godot # Game engine
 #yes | sudo pacman -S blender # 3D modeling software
 #yes | sudo pacman -S gimp # Drawing program
+#yes | sudo pacman -S inkscape # Vector drawing program
 #yes | sudo pacman -S helix # Editor
 #yes | sudo pacman -S gparted # Disc utility
 #yes | sudo pacman -S openvpn # VPN
@@ -147,10 +148,13 @@ sudo chmod 755 /usr/local/bin/powermenu
 sudo chmod 755 /usr/local/bin/wifimenu
 sudo cp lightdm-gtk-greeter.conf /etc/lightdm/
 
+# Laptop Specific
 # Disable beep sounds in laptops
 echo "blacklist pcspkr" >> nobeep.conf
 echo "blacklist snd_pcsp" >> nobeep.conf
 sudo cp nobeep.conf /etc/modprobe.d/
+
+# Power Saving for laptops
 
 # Grub configuration
 # Disable grub menu unless holding Shift
