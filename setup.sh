@@ -82,6 +82,7 @@ yes | sudo pacman -S qutebrowser # Web browser with vim keybindings
 #yes | sudo pacman -S gparted # Disc utility
 #yes | sudo pacman -S openvpn # VPN
 #yes | sudo pacman -S networkmanager-openvpn # Manage OpenVPN from Network Manager
+#yes | sudo pacman -S fzf
 
 # Install libs for drives, trash, archive management
 yes | sudo pacman -S smbclient
@@ -111,6 +112,9 @@ echo "alias vim='nvim'" >> ~/.bashrc
 echo "alias hx='helix'" >> ~/.bashrc
 #echo "PS1='$PWD > '" >> ~/.bashrc
 echo "PS1='\[\033[1;44m\]\[\033[1;31m\] $PWD \[\033[00m\] > '" >> ~/.bashrc
+#echo "alias fzf='find . | fzf'"
+#echo "alias vf='nvim "$(fzf --preview="cat {}" --bind K:preview-up,J:preview-down --prompt "Select a file to edit: ")"'"
+#echo "alias hf='helix "$(fzf --preview="cat {}" --bind K:preview-up,J:preview-down --prompt "Select a file to edit: ")"'"
 
 #echo "alias ll='ls -la'" >> ~/.zshrc
 #echo "alias vim=nvim" >> ~/.zshrc
