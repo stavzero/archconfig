@@ -87,6 +87,7 @@ yes | sudo pacman -S qutebrowser # Web browser with vim keybindings
 # Install libs for drives, trash, archive management
 yes | sudo pacman -S smbclient
 yes | sudo pacman -S gvfs gvfs-smb gvfs-mtp gvfs-gphoto2 gvfs-afc
+yes | sudo pacman -S exfat-utils
 
 # Install papirus theme
 yes | sudo pacman -S papirus-icon-theme
