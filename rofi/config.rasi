@@ -61,7 +61,7 @@ prompt {
 }
 
 entry {
-	placeholder: "Search Apps";
+	placeholder: "Search";
 	placeholder-color: @fg;
 	text-color: @fg-sel;
 	padding: 12;
