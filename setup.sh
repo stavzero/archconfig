@@ -160,9 +160,11 @@ echo "blacklist snd_pcsp" >> nobeep.conf
 sudo cp nobeep.conf /etc/modprobe.d/
 
 # Power Saving for laptops
-#yes | sudo pacman -S tlp
+#yes | sudo pacman -S tlp tlp-rdw
 #sudo systemctl start tlp.service
 #sudo systemctl enable tlp.service
+#sudo systemctl enable NetworkManager-dispatcher.service
+#sudo systemctl mask systemd-rfkill.service systemd-rfkill.socket
 
 # Grub configuration
 # Disable grub menu unless holding Shift
