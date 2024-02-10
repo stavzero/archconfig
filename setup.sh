@@ -81,11 +81,11 @@ yes | sudo pacman -S qutebrowser # Web browser with vim keybindings
 #yes | sudo pacman -S inkscape # Vector drawing program
 #yes | sudo pacman -S audacity # Audio editing program
 #yes | sudo pacman -S helix # Editor
-#yes | sudo pacman -S vscodium # Editor
 #yes | sudo pacman -S gparted # Disc utility
 #yes | sudo pacman -S openvpn # VPN
 #yes | sudo pacman -S networkmanager-openvpn # Manage OpenVPN from Network Manager
 #yes | sudo pacman -S fzf
+# vscodium is available from the AUR after setup with yay -S vscodium
 
 # Install libs for drives, trash, archive management
 yes | sudo pacman -S smbclient
