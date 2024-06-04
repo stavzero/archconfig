@@ -9,6 +9,10 @@ configuration {
 	icon-theme: "Papirus";
 
 	matching: "fuzzy";
+	sort: true;
+	sorting-method: "fzf";
+	levenshtein-sort: false;
+	disable-history: false;
 	terminal: "alacritty";
 }
 
